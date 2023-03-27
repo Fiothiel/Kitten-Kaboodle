@@ -1,9 +1,12 @@
 <template>    
-    <div class="cat-image" :style="`background-image: url('${url}')`">
-        <Loader v-if="loading" />
-        <div v-if="!url" class="cat-image__placeholder">
-            <p>No cat here :(</p>
-            <p>Click for cat!</p>
+    <div class="image-wrapper">
+        <div v-if="url" class="image-wrapper__image" :style="`background-image: url('${url}')`"/>
+        <div v-if="loading" class="image-wrapper__loader">
+            <Loader />
+        </div>        
+        <div v-if="!url && !loading" class="image-wrapper__placeholder">
+            <div>No cat here :(</div>
+            <div>Click for cat!</div>
         </div>
     </div>
 </template>

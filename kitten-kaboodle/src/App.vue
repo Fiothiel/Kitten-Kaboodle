@@ -25,6 +25,7 @@ const { get, loading } = useApi();
 const catUrl = ref('');
 
 const getCat = () => {
+    catUrl.value = '';
     get<ICatImage[]>().then((response) => {
         console.log(response);
         console.log(response[0]);
