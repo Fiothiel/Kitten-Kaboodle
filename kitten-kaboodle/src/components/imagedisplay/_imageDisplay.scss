@@ -1,0 +1,16 @@
+.cat-image {
+  height: 500px;
+  width: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: $font-family-heading;
+  font-size: 40px;
+  border: 10px solid $hotpink;
+  background-color: $pink;
+  color: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}  

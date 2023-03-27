@@ -1,30 +1,39 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+    <div class="cat-app">
+        <h1>Kitten Kaboodle</h1>
+        <div class="cat-app__content">
+            <main>
+                <ImageDisplay :loading="loading" :url="catUrl" />
+            </main>
+            <aside>
+                <button class="button" @click="getCat()">Get cat</button>
+            </aside>
+        </div>
+    </div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<script setup lang="ts">
+import { useApi } from './services/api-service';
+import { ref } from 'vue';
+import { ICatImage } from './interfaces/IRandomCatResponse';
+
+import BreedSelector from './components/BreedSelector.vue'
+import Button from './components/button/Button.vue'
+import ImageDisplay from './components/imagedisplay/ImageDisplay.vue'
+
+const { get, loading } = useApi();
+const catUrl = ref('');
+
+const getCat = () => {
+    get<ICatImage[]>().then((response) => {
+        console.log(response);
+        console.log(response[0]);
+        catUrl.value = response[0]?.url;
+    });
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
+</script>
+
+<style lang="scss"> // the main file that imports everything related with styles
+ @import './styles/main.scss';
 </style>

@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "Bebas-Neue";
+  src: url('./assets/BebasNeue-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url('./assets/Quicksand-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+.cat-app {
+  font-family: $font-family-base;
+  padding: 50px;
+  max-width: 800px;
+
+  h1 {
+    font-family: $font-family-heading;
+    text-align: center;
+    font-size: 60px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    aside {
+      padding: 50px;
+      background-color: $cyan;
+    }    
+  }
+
+  .button {
+    background-color: $green;
+    //color: $cyan;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: $font-family-heading;
+    
+  }
+
+  .cat-image {
+    height: 500px;
+    width: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    font-family: $font-family-heading;
+    font-size: 40px;
+    border: 10px solid $hotpink;
+    background-color: $pink;
+    color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }  
+}
