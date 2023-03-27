@@ -27,8 +27,6 @@ const catUrl = ref('');
 const getCat = () => {
     catUrl.value = '';
     get<ICatImage[]>().then((response) => {
-        console.log(response);
-        console.log(response[0]);
         catUrl.value = response[0]?.url;
     });
 }
