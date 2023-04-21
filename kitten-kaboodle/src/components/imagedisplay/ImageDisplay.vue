@@ -6,13 +6,12 @@
         </div>        
         <div v-if="!url && !loading" class="image-wrapper__placeholder">
             <div>No cat here :(</div>
-            <div>Click for cat!</div>
+            <div>Go get a cat!</div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import Loader from '../loader/Loader.vue';
 
 defineProps<{

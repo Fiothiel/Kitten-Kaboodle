@@ -7,6 +7,7 @@
             </main>
             <aside>
                 <button class="button" @click="getCat()">Get cat</button>
+                <Paws />
             </aside>
         </div>
     </div>
@@ -17,9 +18,9 @@ import { useApi } from './services/api-service';
 import { ref } from 'vue';
 import { ICatImage } from './interfaces/IRandomCatResponse';
 
-import BreedSelector from './components/BreedSelector.vue'
 import Button from './components/button/Button.vue'
 import ImageDisplay from './components/imagedisplay/ImageDisplay.vue'
+import Paws from './components/paws/Paws.vue'
 
 const { get, loading } = useApi();
 const catUrl = ref('');

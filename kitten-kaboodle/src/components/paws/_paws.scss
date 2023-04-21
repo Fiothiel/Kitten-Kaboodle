@@ -1,0 +1,16 @@
+.paws {
+  display: flex;
+  flex-direction: column;
+  transform: rotate(45deg);
+  margin-left: 40px;
+  
+  &__left {
+    margin-left: 70px;
+  }  
+}
+
+.paw {
+  &__icon {
+    fill: $purple;
+  }
+}
