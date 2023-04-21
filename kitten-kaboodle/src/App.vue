@@ -8,6 +8,7 @@
             <aside>
                 <button class="button" @click="getCat()">Get cat</button>
                 <Paws />
+                <span class="meow">Meow</span>
             </aside>
         </div>
     </div>
