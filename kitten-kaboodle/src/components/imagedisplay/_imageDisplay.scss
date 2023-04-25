@@ -10,6 +10,12 @@
   color: $white;
   animation: fadeIn 1s;
 
+  @include for-tablet-landscape-down {
+    width: 100%;
+    border-right: none;
+    border-bottom: 5px solid $black;
+  }
+
   &__image {
     height: 100%;
     width: 100%;

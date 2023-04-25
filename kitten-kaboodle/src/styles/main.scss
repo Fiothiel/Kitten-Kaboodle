@@ -1,13 +1,5 @@
-// Bootstrap
-@import 'bootstrap/scss/functions';
-@import 'bootstrap/scss/variables';
-@import 'bootstrap/scss/mixins';
-@import 'bootstrap/scss/maps';
-@import 'bootstrap/scss/root';
-@import 'bootstrap/scss/reboot';
-@import 'bootstrap/scss/type';
-@import 'bootstrap/scss/forms';
-
+@import 'mixins';
+@import 'typography.scss';
 @import 'variables';
 @import 'style';
 @import '/src/components/imagedisplay/imageDisplay';
