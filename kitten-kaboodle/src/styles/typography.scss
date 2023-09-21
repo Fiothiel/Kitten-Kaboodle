@@ -1,11 +1,4 @@
 @font-face {
-  font-family: "Bebas-Neue";
-  src: url('./assets/BebasNeue-Regular.ttf') format('truetype');
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Homemade-Apple";
   src: url('./assets/HomemadeApple-Regular.ttf') format('truetype');
   font-style: normal;
@@ -19,7 +12,5 @@
   font-display: swap;
 }
 
-
 $font-family-base: "Quicksand", sans-serif !default;
 $font-family-heading: "Homemade-Apple", sans-serif !default;
-$font-family-bebas: "Bebas-Neue", sans-serif !default;

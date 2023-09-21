@@ -1,7 +1,9 @@
 <template>
   <header>
-    <h1>Kitten Kaboodle</h1>
-    <img src="../../assets/images/headercat.jpg" />    
+    <div>
+      <span>Kitten Kaboodle</span>
+    </div>
+    <img src="../../assets/images/headercat.jpg" />
   </header>
 </template>
 

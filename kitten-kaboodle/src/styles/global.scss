@@ -1,17 +1,53 @@
-.kitten-kaboodle {
-  max-width: 800px;
-  margin: auto;
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
 
   h1 {
-    font-family: $font-family-heading;    
+    font-family: $font-family-heading;
+    font-size: 4rem;
+    margin: 0;
   }
 
   a {
     color: $black;
     transition: 0.2s ease;
-    
+
     &:hover {
       color: $cyan;
+    }
+  }
+
+  .button {
+    padding: $spacing-medium $spacing-x-large;
+    margin: $spacing-medium;
+    background-color: $cyan;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 2rem;
+    color: $white;
+    border: none;
+    border-radius: 2px;
+    transition: 0.5s ease;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $black;
+    }
+  }
+
+  .kitten-kaboodle {
+    font-family: $font-family-base;
+    max-width: 800px;
+    margin: auto;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      padding: $spacing-medium $spacing-x-large $spacing-x-large $spacing-x-large;
+      background-color: $gray-light;
     }
   }
 }

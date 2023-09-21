@@ -1,0 +1,46 @@
+.image {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  margin-top: $spacing-medium;
+  background-color: $cyan-light;
+  animation: fadeIn 1s;
+  font-size: 4rem;
+  color: $white;
+
+  @include for-phone-only {
+    height: 400px;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    animation: fadeIn 1s;
+  }
+
+  &__placeholder {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__loader {
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

@@ -1,7 +1,10 @@
 nav {
   display: flex;
   justify-content: center;
+  padding: $spacing-x-small;
   background-color: $cyan-dark;
+
+  margin-top: -0.3rem; // !?
 
   ul {
     list-style: none;
@@ -10,9 +13,8 @@ nav {
 
     li {
       a {
-        color: $white;
         font-weight: bold;
-        font-size: 1.5rem;
+        font-size: 2.4rem;
         text-decoration: none;
         text-transform: uppercase;
       }

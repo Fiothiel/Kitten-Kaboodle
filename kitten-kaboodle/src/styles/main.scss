@@ -1,7 +1,6 @@
 @import 'mixins';
 @import 'typography.scss';
 @import 'variables';
-@import 'style';
 @import 'global';
 
 // Components
@@ -10,3 +9,7 @@
 @import '/src/components/loader/loader';
 @import '/src/components/menu/menu';
 @import '/src/components/paws/paws';
+
+// Pages 
+@import '/src/pages/home/home.scss';
+@import '/src/pages/breed/breed.scss';
