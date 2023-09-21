@@ -11,6 +11,14 @@
 <script setup lang="ts">
 import Menu from './components/menu/Menu.vue'
 import Header from './components/header/Header.vue'
+import { onBeforeMount } from 'vue'
+import { useCatService } from './services/cat-service';
+
+const { getAndSaveBreeds } = useCatService();
+
+onBeforeMount(() => {
+    getAndSaveBreeds();
+});
 
 </script>
 

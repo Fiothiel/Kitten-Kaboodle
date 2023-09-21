@@ -50,6 +50,7 @@ export const useStore = defineStore('store', () => {
   // Actions
   const saveBreeds = (incomingBreeds: IBreed[]) => {
     breeds.value = incomingBreeds;
+    console.log(incomingBreeds);
   };
 
   const setSelectedBreed = (breed: IBreed) => {
