@@ -1,9 +1,9 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { ref } from 'vue';
 
-export const useApi = () => {
+export const useApi = (url: string) => {
     const api = axios.create({
-        baseURL: 'https://api.thecatapi.com/v1/images/search',        
+        baseURL: 'https://api.thecatapi.com/v1',        
         headers: {
         'x-api-key': 'live_HpWp7hv7mqbfUOxORGvNtolgyXaiS8FoRRkx5w7l1vLdhQW3uhIJZs2XadWYsaXO' 
     }
@@ -22,7 +22,7 @@ export const useApi = () => {
               .join('&');
       }
   
-      let completeUrl = '';
+      let completeUrl = url;
       if (id)
       {
         completeUrl += '/' + id;

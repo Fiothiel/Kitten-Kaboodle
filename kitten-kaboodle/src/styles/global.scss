@@ -1,0 +1,17 @@
+.kitten-kaboodle {
+  max-width: 800px;
+  margin: auto;
+
+  h1 {
+    font-family: $font-family-heading;    
+  }
+
+  a {
+    color: $black;
+    transition: 0.2s ease;
+    
+    &:hover {
+      color: $cyan;
+    }
+  }
+}

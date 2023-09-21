@@ -1,0 +1,24 @@
+header {
+  position: relative;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  h1 {
+    bottom: $spacing-small;
+    left: $spacing-medium;
+    position: absolute;
+    line-height: 1.2em;
+    font-size: 4.5rem;        
+    text-align: left;
+    max-width: 50%;
+    color: $white;
+    margin: 0;
+
+    @include for-phone-only {
+      font-size: 3rem;
+    }
+  }
+}

@@ -2,6 +2,11 @@
 @import 'typography.scss';
 @import 'variables';
 @import 'style';
+@import 'global';
+
+// Components
+@import '/src/components/header/header';
 @import '/src/components/imagedisplay/imageDisplay';
 @import '/src/components/loader/loader';
+@import '/src/components/menu/menu';
 @import '/src/components/paws/paws';

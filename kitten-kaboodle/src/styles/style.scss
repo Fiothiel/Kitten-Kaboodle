@@ -13,13 +13,13 @@
 
   h1 {
     font-family: $font-family-heading;
-    text-align: center;
-    font-size: 60px;
-
+    /* text-align: center;
+    font-size: 60px; */
+/* 
     @include for-tablet-landscape-down {
       font-size: 40px;
       margin: 0;
-    }
+    } */
   }
 
   &__content {

@@ -1,5 +1,5 @@
 <template>    
-    <div class="image-wrapper">
+<!--     <div class="image-wrapper">
         <div v-if="url" class="image-wrapper__image" :style="`background-image: url('${url}')`"/>
         <div v-if="loading" class="image-wrapper__loader">
             <Loader />
@@ -8,7 +8,7 @@
             <div>No cat here :(</div>
             <div>Go get a cat!</div>
         </div>
-    </div>
+    </div> -->
 </template>
 
 <script setup lang="ts">
