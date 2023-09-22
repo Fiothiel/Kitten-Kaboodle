@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import Home from './pages/home/Home.vue';
-import Breed from './pages/breed/Breed.vue';
+import Breeds from './pages/breeds/Breeds.vue';
  const  router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -12,8 +12,8 @@ import Breed from './pages/breed/Breed.vue';
     },
     {
       name: "By breed",
-      path: "/breed",
-      component: Breed,
+      path: "/breeds",
+      component: Breeds,
     },
   ],
 });

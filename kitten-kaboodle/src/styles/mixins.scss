@@ -11,3 +11,10 @@
 @mixin for-big-desktop-down {
   @media (max-width: 1799px) { @content; }
 }
+
+@mixin content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}

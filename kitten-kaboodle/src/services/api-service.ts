@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { ref } from 'vue';
 
-export const useApi = (url: string) => {
+export const useApi = (endpoint: string) => {
     const api = axios.create({
         baseURL: 'https://api.thecatapi.com/v1',        
         headers: {
@@ -22,7 +22,7 @@ export const useApi = (url: string) => {
               .join('&');
       }
   
-      let completeUrl = url;
+      let completeUrl = endpoint;
       if (id)
       {
         completeUrl += '/' + id;

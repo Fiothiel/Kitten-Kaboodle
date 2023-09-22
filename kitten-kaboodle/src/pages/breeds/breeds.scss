@@ -1,0 +1,5 @@
+.breeds {
+  @include content;
+
+  row-gap: $spacing-large;
+}

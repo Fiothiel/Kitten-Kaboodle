@@ -1,0 +1,15 @@
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  row-gap: $spacing-x-small;
+
+  label {
+    font: 2rem;
+  }
+
+  select {
+    background-color: $white;
+    border: 1px solid $black;
+    padding: $spacing-small $spacing-medium;
+  }
+}

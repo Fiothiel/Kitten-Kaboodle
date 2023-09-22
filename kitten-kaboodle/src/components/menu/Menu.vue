@@ -11,6 +11,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router';
-/* defineProps<{ msg: string }>() */
+
 const router = useRouter();
 </script>

@@ -4,6 +4,7 @@
 @import 'global';
 
 // Components
+@import '/src/components/dropdown/dropdown';
 @import '/src/components/header/header';
 @import '/src/components/imagedisplay/imageDisplay';
 @import '/src/components/loader/loader';
@@ -11,5 +12,5 @@
 @import '/src/components/paws/paws';
 
 // Pages 
-@import '/src/pages/home/home.scss';
-@import '/src/pages/breed/breed.scss';
+@import '/src/pages/home/home';
+@import '/src/pages/breeds/breeds';

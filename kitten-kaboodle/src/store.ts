@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia';
-import { Ref, ref } from '@vue/reactivity';
+import { computed, Ref, ref } from 'vue';
 import { IBreed } from './interfaces/IBreed';
 import { IWeight } from './interfaces/IWeight';
 
 export const useStore = defineStore('store', () => {
-  const breeds: Ref<IBreed[]> = ref([] as IBreed[]);
+  const breeds = ref([] as IBreed[]);
   const selectedBreed: Ref<IBreed> = ref({
     weight: {} as IWeight,
     id: "",
@@ -50,17 +50,20 @@ export const useStore = defineStore('store', () => {
   // Actions
   const saveBreeds = (incomingBreeds: IBreed[]) => {
     breeds.value = incomingBreeds;
-    console.log(incomingBreeds);
   };
 
-  const setSelectedBreed = (breed: IBreed) => {
+  const setSelectedBreed = (breed: IBreed) => {    
     selectedBreed.value = breed;
   };
+
+  // Getter
+  const getSelectedBreed = computed(() => selectedBreed.value);
 
   return {
     breeds,
     selectedBreed,
     saveBreeds,
-    setSelectedBreed
+    setSelectedBreed,
+    getSelectedBreed
   }
 })
