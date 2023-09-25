@@ -1,12 +1,11 @@
 <template>
   <section class="breeds">
     <h1>Find out more</h1>
-    <Dropdown id="breed-selector" label="Pick a breed" :options="options" @select="onSelect" />
+    <Dropdown id="breed-selector" label="Pick a breed" :options="options" v-model="selected" @change="onSelect" />
     <router-link :to="`/details/${selectedBreed.id}`" v-if="selectedBreed.id !== ''">
       <CatItem :imageReference="selectedBreed?.reference_image_id ?? null" :name="selectedBreed.name"
         :origin="selectedBreed.origin" />
     </router-link>
-
   </section>
 </template>
 
@@ -23,15 +22,25 @@ const store = useStore();
 const breeds = computed(() => store.breeds);
 const selectedBreed = computed(() => store.getSelectedBreed);
 
+let selected = ref(selectedBreed.value.id);
+
 const options = computed(() => {
-  return breeds?.value?.map((breed) => ({
+  let array = breeds?.value?.map((breed) => ({
     label: breed.name,
     value: breed.id,
   }));
+
+  // We want an "empty option"
+  array.unshift({
+    label: '',
+    value: '',
+  });
+
+  return array;
 });
 
-const onSelect = (value: string) => {
-  const breed = getBreed(value);
+const onSelect = () => {
+  const breed = getBreed(selected.value);
   if (breed) {
     store.setSelectedBreed(breed);
   }
