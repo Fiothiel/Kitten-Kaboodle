@@ -2,8 +2,8 @@
   <section class="breeds">
     <h1>Find out more</h1>
     <Dropdown id="breed-selector" label="Pick a breed" :options="options" v-model="selected" @change="onSelect" />
-    <router-link :to="`/details/${selectedBreed.id}`" v-if="selectedBreed.id !== ''">
-      <CatItem :imageReference="selectedBreed?.reference_image_id ?? null" :name="selectedBreed.name"
+    <router-link :to="`/details/${selectedBreed?.id}`" v-if="selectedBreed?.id !== ''">
+      <CatItem v-if="selectedBreed" :imageReference="selectedBreed.reference_image_id ?? null" :name="selectedBreed.name"
         :origin="selectedBreed.origin" />
     </router-link>
   </section>
@@ -22,7 +22,7 @@ const store = useStore();
 const breeds = computed(() => store.breeds);
 const selectedBreed = computed(() => store.getSelectedBreed);
 
-let selected = ref(selectedBreed.value.id);
+let selected = ref(selectedBreed.value?.id ?? '');
 
 const options = computed(() => {
   let array = breeds?.value?.map((breed) => ({
@@ -40,6 +40,12 @@ const options = computed(() => {
 });
 
 const onSelect = () => {
+  if (selected.value === '') {
+    // Selected the empty option? Set saved breed to null
+    store.setSelectedBreed(null);
+    return;
+  }
+
   const breed = getBreed(selected.value);
   if (breed) {
     store.setSelectedBreed(breed);
