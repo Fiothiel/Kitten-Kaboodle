@@ -1,0 +1,12 @@
+.paw-scale {
+  margin: $spacing-small 0;
+
+  label {
+    font-weight: bold;
+  }
+
+  &__paws {
+    display: flex;
+    column-gap: $spacing-small;
+  }
+}

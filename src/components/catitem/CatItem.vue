@@ -1,17 +1,17 @@
 <template>
   <div class="cat-item">
-    <img :src="`https://cdn2.thecatapi.com/images/${imageReference}.jpg`" />
-    <span>{{ name }}</span>
-    <span>{{ origin }}</span>
+    <img v-if="imageReference" :src="`https://cdn2.thecatapi.com/images/${imageReference}.jpg`" />
+    <div class="cat-item__text">
+      <div class="cat-item__name">{{ name }}</div>
+      <div>{{ origin }}</div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router';
 
 defineProps<{
-  imageReference: string;
+  imageReference: string | null;
   name: string;
   origin: string;
 }>();

@@ -1,16 +1,12 @@
 <template>
   <section class="breeds">
     <h1>Find out more</h1>
-    <Dropdown
-      id="breed-selector"
-      label="Pick a breed"
-      :options="options"
-      @select="onSelect"
-    />
-    <div v-if="store.getSelectedBreed.id !== ''">
-      <div>Selected breed: {{ selectedBreed.name }}</div>
-      <CatItem :imageReference="selectedBreed.reference_image_id" :name="selectedBreed.name" :origin="selectedBreed.origin" />
-    </div>    
+    <Dropdown id="breed-selector" label="Pick a breed" :options="options" @select="onSelect" />
+    <router-link :to="`/details/${selectedBreed.id}`" v-if="selectedBreed.id !== ''">
+      <CatItem :imageReference="selectedBreed?.reference_image_id ?? null" :name="selectedBreed.name"
+        :origin="selectedBreed.origin" />
+    </router-link>
+
   </section>
 </template>
 
@@ -18,7 +14,6 @@
 import { ref, computed } from "vue";
 import { useCatService } from "../../services/cat-service";
 import { useStore } from "../../store";
-import { IBreed } from "../../interfaces/IBreed";
 import CatItem from "../../components/catitem/CatItem.vue";
 import Dropdown from "../../components/dropdown/Dropdown.vue";
 

@@ -11,7 +11,9 @@
 @import '/src/components/loader/loader';
 @import '/src/components/menu/menu';
 @import '/src/components/paws/paws';
+@import '/src/components/pawscale/pawscale';
 
 // Pages 
-@import '/src/pages/home/home';
 @import '/src/pages/breeds/breeds';
+@import '/src/pages/details/details';
+@import '/src/pages/home/home';

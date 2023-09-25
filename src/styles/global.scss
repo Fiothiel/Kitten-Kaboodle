@@ -13,6 +13,7 @@ body {
 
   a {
     color: $black;
+    text-decoration: none;
     transition: 0.2s ease;
 
     &:hover {
@@ -45,6 +46,7 @@ body {
 
     &__content {
       display: flex;
+      min-height: 800px;
       flex-direction: column;
       padding: $spacing-medium $spacing-x-large $spacing-x-large $spacing-x-large;
       background-color: $gray-light;
