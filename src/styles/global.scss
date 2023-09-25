@@ -9,6 +9,10 @@ body {
     font-family: $font-family-heading;
     font-size: 4rem;
     margin: 0;
+
+    @include for-tablet-landscape-down {
+      font-size: 3rem;
+    }
   }
 
   a {
@@ -50,6 +54,10 @@ body {
       flex-direction: column;
       padding: $spacing-medium $spacing-x-large $spacing-x-large $spacing-x-large;
       background-color: $gray-light;
+
+      @include for-tablet-landscape-down {
+        padding: $spacing-medium $spacing-medium $spacing-x-large $spacing-medium;
+      }
     }
   }
 }
