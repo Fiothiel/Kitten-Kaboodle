@@ -1,10 +1,6 @@
 <template>
-    <div class="loader">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    <div class="loader"></div>
+
 </template>
 
 <script setup lang="ts">

@@ -1,55 +1,27 @@
 .loader {
-  display: inline-block;
-  position: relative;
-  width: 185px;
-  height: 80px;
-}
-.loader div {
-  position: absolute;
-  top: 33px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: $purple;
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
-}
-.loader div:nth-child(1) {
-  left: 18px;
-  animation: loader1 0.6s infinite;
-}
-.loader div:nth-child(2) {
-  left: 18px;
-  animation: loader2 0.6s infinite;
-}
-.loader div:nth-child(3) {
-  left: 74px;
-  animation: loader2 0.6s infinite;
-}
-.loader div:nth-child(4) {
-  left: 129px;
-  animation: loader3 0.6s infinite;
-}
-@keyframes loader1 {
-  0% {
-    transform: scale(0);
+  width: calc(6*30px);
+  height: 50px;
+  display: flex;
+  color: $purple;
+  filter: drop-shadow(30px 25px 0 currentColor) drop-shadow(60px 0 0 currentColor) drop-shadow(120px 0 0 currentColor);
+  clip-path: inset(0 100% 0 0);
+  animation: l12 1s infinite steps(7);
+
+  &::before {
+    content: "";
+    width: 30px;
+    height: 25px;
+    --c: no-repeat radial-gradient(farthest-side, currentColor 92%, #0000);
+    background:
+      var(--c) left /70% 70%,
+      var(--c) right/20% 20%,
+      var(--c) top 0 right 15%/20% 20%,
+      var(--c) bottom 0 right 15%/20% 20%;
   }
+}
+
+@keyframes l12 {
   100% {
-    transform: scale(1);
-  }
-}
-@keyframes loader3 {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-@keyframes loader2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(55px, 0);
+    clip-path: inset(0 -30px 0 0)
   }
 }
