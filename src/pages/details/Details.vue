@@ -4,6 +4,7 @@
     <img :src="`https://cdn2.thecatapi.com/images/${cat?.reference_image_id}.jpg`" />
     <p>{{ cat?.description }}</p>
     <div class="details__characteristics">
+      <h2>Characteristics</h2>
       <PawScale label="Child friendly" :value="cat?.child_friendly" />
       <PawScale label="Dog friendly" :value="cat?.dog_friendly" />
       <PawScale label="Stranger friendly" :value="cat?.stranger_friendly" />

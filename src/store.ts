@@ -4,6 +4,7 @@ import { IBreed } from './interfaces/IBreed';
 import { IWeight } from './interfaces/IWeight';
 
 export const useStore = defineStore('store', () => {
+  const startCatImageUrl = ref('');
   const breeds = ref([] as IBreed[]);
   const selectedBreed: Ref<IBreed> = ref({
     weight: {} as IWeight,
@@ -60,10 +61,11 @@ export const useStore = defineStore('store', () => {
   const getSelectedBreed = computed(() => selectedBreed.value);
 
   return {
+    startCatImageUrl,
     breeds,
     selectedBreed,
     saveBreeds,
     setSelectedBreed,
-    getSelectedBreed
+    getSelectedBreed    
   }
 })
