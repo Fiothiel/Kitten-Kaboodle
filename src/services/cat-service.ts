@@ -1,9 +1,8 @@
 
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import { useStore } from '../store';
 import { useApi } from './api-service';
 import { IBreed } from '../interfaces/IBreed';
-import { IOption } from '../interfaces/IOption';
 
 export const useCatService = () => {
   const { get: getBreeds } = useApi('/breeds');

@@ -5,12 +5,12 @@
     <p>{{ cat?.description }}</p>
     <div class="details__characteristics">
       <h2>Characteristics</h2>
-      <PawScale label="Child friendly" :value="cat?.child_friendly" />
-      <PawScale label="Dog friendly" :value="cat?.dog_friendly" />
-      <PawScale label="Stranger friendly" :value="cat?.stranger_friendly" />
-      <PawScale label="Energy level" :value="cat?.energy_level" />
-      <PawScale label="Shedding level" :value="cat?.shedding_level" />
-      <PawScale label="Affection level" :value="cat?.affection_level" />
+      <PawScale label="Child friendly" :value="cat?.child_friendly ?? 0" />
+      <PawScale label="Dog friendly" :value="cat?.dog_friendly ?? 0" />
+      <PawScale label="Stranger friendly" :value="cat?.stranger_friendly ?? 0" />
+      <PawScale label="Energy level" :value="cat?.energy_level ?? 0" />
+      <PawScale label="Shedding level" :value="cat?.shedding_level ?? 0" />
+      <PawScale label="Affection level" :value="cat?.affection_level ?? 0" />
     </div>
   </article>
 </template>
@@ -27,6 +27,6 @@ const props = defineProps<{
   id: string;
 }>();
 
-const cat: ComputedRef<IBreed> = computed(() => getBreed(props.id));
+const cat: ComputedRef<IBreed|null> = computed(() => getBreed(props.id));
 
 </script>
